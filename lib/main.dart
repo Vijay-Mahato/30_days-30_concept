@@ -1,3 +1,4 @@
+import 'package:concept/30_days_concepts/day-3.dart';
 import 'package:flutter/material.dart';
 
 import '30_days_concepts/day-1.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: const Color.fromARGB(255, 128, 64, 240),
       ),
-      home: Day2(),
+      // ignore: prefer_const_constructors
+      home: Day3(),
     );
   }
 }
