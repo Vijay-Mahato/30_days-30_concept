@@ -32,32 +32,66 @@ class Day4 extends StatelessWidget {
             width: double.infinity,
             color: Colors.grey,
             child: ListView.builder(
-              scrollDirection: Axis.vertical,
+              scrollDirection: Axis.horizontal,
               itemCount: name.length,
               itemBuilder: (context, index) {
-                return Card(
-                  margin: const EdgeInsets.all(10),
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      side: const BorderSide(color: Colors.red, width: 3)),
-                  color: const Color.fromARGB(255, 114, 186, 219),
-                  child: ListTile(
-                    title: Text(
-                      name[index],
-                      style: const TextStyle(
-                        color: Color.fromARGB(232, 21, 16, 16),
-                        fontWeight: FontWeight.w500,
+                return Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.amber[100]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Text(
+                              name[index],
+                              style: const TextStyle(
+                                color: Color.fromARGB(232, 21, 16, 16),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Text(
+                              roll_no[index],
+                              style: const TextStyle(
+                                color: Color.fromARGB(232, 21, 16, 16),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    dense: false,
-                    leading: const Icon(Icons.person),
-                    iconColor: Colors.deepOrange,
-                    subtitle: Text(roll_no[index]),
-                    onTap: () {
-                      print(name[index]);
-                    },
-                  ),
+                  ],
                 );
+                // return Card(
+                //   margin: const EdgeInsets.all(10),
+                //   shape: BeveledRectangleBorder(
+                //       borderRadius: BorderRadius.circular(5),
+                //       side: const BorderSide(color: Colors.red, width: 3)),
+                //   color: const Color.fromARGB(255, 114, 186, 219),
+                //   child: ListTile(
+                //     title: Text(
+                //       name[index],
+                //       style: const TextStyle(
+                //         color: Color.fromARGB(232, 21, 16, 16),
+                //         fontWeight: FontWeight.w500,
+                //       ),
+                //     ),
+                //     dense: false,
+                //     leading: const Icon(Icons.person),
+                //     iconColor: Colors.deepOrange,
+                //     subtitle: Text(roll_no[index]),
+                //     onTap: () {
+                //       print(name[index]);
+                //     },
+                //   ),
+                // );
               },
             ),
           ),
