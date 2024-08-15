@@ -1,5 +1,4 @@
-import 'package:concept/30_days_concepts/day-6.dart';
-import 'package:concept/30_days_concepts/day-7.dart';
+import 'package:concept/30_days_concepts/day-8.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color.fromARGB(255, 128, 64, 240),
       ),
       // ignore: prefer_const_constructors
-      home: Day7(),
+      home: Day8(),
     );
   }
 }
