@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'day-2.dart';
+
 class Day1 extends StatelessWidget {
   const Day1({super.key});
 
@@ -16,6 +18,15 @@ class Day1 extends StatelessWidget {
           style: TextStyle(
               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
         ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.skip_next_sharp),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Day2();
+                }));
+              }),
+        ],
       ),
       body: Center(
         child: Container(

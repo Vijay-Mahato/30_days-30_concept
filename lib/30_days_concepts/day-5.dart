@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Day5 extends StatelessWidget {
   const Day5({super.key});
@@ -9,57 +7,53 @@ class Day5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        backgroundColor: Theme.of(context).primaryColor,
+        centerTitle: false,
         title: const Text(
-          "Day-5 Snack-Bar",
+          "Day-5 Snack Bar Widget",
           style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+              fontWeight: FontWeight.w700, fontSize: 17, color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 246, 86, 75),
       ),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          height: 50,
-          width: double.maxFinite,
+          height: 40,
+          width: 200,
           child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.blue),
-                overlayColor: WidgetStateProperty.all(Colors.white),
-                shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10))),
-              ),
+                  backgroundColor:
+                      WidgetStateProperty.all(Theme.of(context).primaryColor),
+                  shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: const BorderSide(color: Colors.black, width: 2)))),
               onPressed: () {
-                print("clicked the button");
-                final snackbar = SnackBar(
+                print("Snack Bar Button Clicked");
+                final snack = SnackBar(
                   action: SnackBarAction(
-                    label: 'Undo',
-                    textColor: const Color.fromARGB(255, 0, 139, 253),
-                    onPressed: () {
-                      print("Undo button clicked");
-                    },
-                  ),
+                      label: "Undo",
+                      onPressed: () {
+                        print("Undo Button Clicked");
+                      }),
+                  backgroundColor: Colors.black,
+                  duration: const Duration(seconds: 5),
                   behavior: SnackBarBehavior.floating,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  duration: const Duration(seconds: 2),
-                  backgroundColor: Colors.black,
-                  content: const Center(
-                    child: Text(
-                      "You have clicked the button",
-                    ),
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(
+                          color: Theme.of(context).primaryColor, width: 2)),
+                  content: const Text(
+                    "This is a Snack Bar",
+                    style: TextStyle(color: Colors.white),
                   ),
                 );
-                ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                ScaffoldMessenger.of(context).showSnackBar(snack);
               },
               child: const Text(
-                "SnackBar",
-                style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
+                "Snack Bar",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 18),
               )),
         ),
       ),

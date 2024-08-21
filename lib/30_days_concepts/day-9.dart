@@ -6,33 +6,38 @@ class Day9 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Day-9 Alert-Dialog",
-          style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
+          elevation: 1,
+          centerTitle: false,
+          title: const Text(
+            "Day-9   Alert Box",
+            style: TextStyle(
+                color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700),
+          ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
-      ),
-      body: Center(
-        child: Container(
-          child: ElevatedButton(
-              style: ButtonStyle(
+        body: Center(
+          child: Container(
+            height: 40,
+            child: ElevatedButton(
+                style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all(Colors.blue),
-                  overlayColor: WidgetStateProperty.all(Colors.grey),
                   shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)))),
-              onPressed: () {
-                _showMyDialog(context);
-              },
-              child: const Text(
-                "Show Alert Dialog",
-                style: TextStyle(color: Colors.white),
-              )),
-        ),
-      ),
-    );
+                      borderRadius: BorderRadius.circular(10))),
+                  side: WidgetStateProperty.all(
+                      const BorderSide(color: Colors.black, width: 2)),
+                ),
+                onPressed: () {
+                  print("Button Clicked");
+                  _showMyDialog(context);
+                },
+                child: const Text(
+                  'Show Alert Box',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                )),
+          ),
+        ));
   }
 }
 

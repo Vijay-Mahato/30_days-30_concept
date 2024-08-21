@@ -1,3 +1,4 @@
+import 'package:concept/30_days_concepts/day-3.dart';
 import 'package:flutter/material.dart';
 
 class Day2 extends StatelessWidget {
@@ -18,6 +19,15 @@ class Day2 extends StatelessWidget {
             ),
           ),
           backgroundColor: const Color.fromARGB(255, 246, 86, 75),
+          actions: [
+            IconButton(
+                icon: Icon(Icons.skip_next_sharp),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Day3();
+                  }));
+                }),
+          ],
         ),
         body: Column(children: [
           Container(

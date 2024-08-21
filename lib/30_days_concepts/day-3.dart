@@ -1,3 +1,4 @@
+import 'package:concept/30_days_concepts/day-4.dart';
 import 'package:flutter/material.dart';
 
 class Day3 extends StatelessWidget {
@@ -19,6 +20,15 @@ class Day3 extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.skip_next_sharp),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Day4();
+                }));
+              }),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
