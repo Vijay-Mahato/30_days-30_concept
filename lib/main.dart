@@ -1,12 +1,6 @@
 // ignore: unused_import
 import 'package:concept/30_days_concepts/day-10.dart';
-import 'package:concept/30_days_concepts/day-5.dart';
-import 'package:concept/30_days_concepts/day-7.dart';
-import 'package:concept/30_days_concepts/day-9.dart';
 import 'package:flutter/material.dart';
-
-import '30_days_concepts/day-1.dart';
-import '30_days_concepts/day-11.dart';
 
 void main() {
   runApp(const MyApp());
